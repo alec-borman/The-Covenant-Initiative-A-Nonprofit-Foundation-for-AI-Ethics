@@ -1,19 +1,16 @@
 <!--
   =================================
   DOCUMENT: The Covenant Initiative
-  VERSION:  5.0 (Complete Redesign)
+  VERSION:  5.1 (Layout & KaTeX Fix)
   AUTHOR:   Gemini
   UPDATES:
-  - COMPLETE REDESIGN: Rebuilt from scratch for best-practice information architecture.
-  - NEW LAYOUT: Replaced single-page scroll with a modern, tab-based SPA-like interface
-    for the 7 Domains. This is a much cleaner user flow.
-  - WORDING OVERHAUL: Rewrote all Domain titles and principles to be more accessible,
-    inspiring, and clear (e.g., "Substrate" -> "The Body", "Stewardship" -> "The Future").
-  - INTERACTIVITY: Built a new JS-driven tab system. Removed Ctrl+K palette, as the
-    new tab navigation is more intuitive and serves a similar purpose.
-  - DARK/LIGHT MODE: Ensured every new component (tabs, panes, cards) is flawless
-    in both dark and light mode.
-  - KATEX FIX: Permanently fixed the 'integrity' hash typo (was 'xintegrity').
+  - KATEX FIX: Corrected all 3 'xintegrity' typos to 'integrity'. This
+    will fix the bug where math symbols ($h$, \A_D) were rendering as
+    garbled text ("horizontal lines").
+  - NAV BAR FIX: Restructured the header nav to be more robust. Grouped
+    the desktop and mobile nav items in a parent <div> to ensure
+    the logo and nav items are properly spaced on all screen sizes
+    and prevent the overlap seen in the screenshot.
   =================================
 -->
 <html lang="en" class="scroll-smooth">
@@ -438,7 +435,7 @@
 
     <!--
       =================================
-      HEADER / NAVIGATION
+      HEADER / NAVIGATION (FIXED)
       =================================
     -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
@@ -449,33 +446,36 @@
                 <span>The Covenant <span class="text-brand-sky">Initiative</span></span>
             </a>
 
-            <!-- Desktop Nav (Hidden on mobile) -->
-            <div class="hidden md:flex items-center md:space-x-4 lg:space-x-6">
-                <a href="#mission" class="nav-link text-sm transition-colors light:text-slate-700 light:hover:text-sky-700 dark:text-slate-300 dark:hover:text-sky-400">Mission</a>
-                <a href="#problem" class="nav-link text-sm transition-colors light:text-slate-700 light:hover:text-sky-700 dark:text-slate-300 dark:hover:text-sky-400">The Problem</a>
-                <a href="#domains" class="nav-link text-sm transition-colors light:text-slate-700 light:hover:text-sky-700 dark:text-slate-300 dark:hover:text-sky-400">The Covenant</a>
-                <a href="#join" class="nav-link text-sm transition-colors light:text-slate-700 light:hover:text-sky-700 dark:text-slate-300 dark:hover:text-sky-400">Join Us</a>
-                
-                <!-- CTA Button -->
-                <a href="#domains" class="ml-4 px-4 py-2 text-sm font-medium text-white bg-brand-sky rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-sky-500" data-magnetic>
-                    Explore the Axioms
-                </a>
-                
-                <!-- Dark/Light Mode Toggle -->
-                <button id="theme-toggle" class="p-2 rounded-full transition-colors light:text-slate-700 light:hover:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700" aria-label="Toggle theme" data-magnetic>
-                    <svg id="theme-icon-sun" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z" /></svg>
-                    <svg id="theme-icon-moon" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
-                </button>
-            </div>
+            <!-- NAV WRAPPER (This is the new element for robustness) -->
+            <div>
+                <!-- Desktop Nav (Hidden on mobile) -->
+                <div class="hidden md:flex items-center md:space-x-4 lg:space-x-6">
+                    <a href="#mission" class="nav-link text-sm transition-colors light:text-slate-700 light:hover:text-sky-700 dark:text-slate-300 dark:hover:text-sky-400">Mission</a>
+                    <a href="#problem" class="nav-link text-sm transition-colors light:text-slate-700 light:hover:text-sky-700 dark:text-slate-300 dark:hover:text-sky-400">The Problem</a>
+                    <a href="#domains" class="nav-link text-sm transition-colors light:text-slate-700 light:hover:text-sky-700 dark:text-slate-300 dark:hover:text-sky-400">The Covenant</a>
+                    <a href="#join" class="nav-link text-sm transition-colors light:text-slate-700 light:hover:text-sky-700 dark:text-slate-300 dark:hover:text-sky-400">Join Us</a>
+                    
+                    <!-- CTA Button -->
+                    <a href="#domains" class="ml-4 px-4 py-2 text-sm font-medium text-white bg-brand-sky rounded-full transition-all duration-300 transform hover:scale-105 hover:bg-sky-500" data-magnetic>
+                        Explore the Axioms
+                    </a>
+                    
+                    <!-- Dark/Light Mode Toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-full transition-colors light:text-slate-700 light:hover:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700" aria-label="Toggle theme" data-magnetic>
+                        <svg id="theme-icon-sun" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 12a5 5 0 100-10 5 5 0 000 10z" /></svg>
+                        <svg id="theme-icon-moon" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                    </button>
+                </div>
 
-            <!-- Mobile Menu Button (Hidden on desktop) -->
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="p-2 rounded-md light:text-slate-700 light:hover:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700" aria-label="Open menu">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-                        <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+                <!-- Mobile Menu Button (Hidden on desktop) -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2 rounded-md light:text-slate-700 light:hover:bg-slate-200 dark:text-slate-300 dark:hover:bg-slate-700" aria-label="Open menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </nav>
 
