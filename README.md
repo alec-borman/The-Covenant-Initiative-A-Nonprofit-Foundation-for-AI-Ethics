@@ -63,9 +63,9 @@
       KaTeX for Math Rendering (FIXED)
       =================================
     -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" xintegrity="sha384-wcPF+Hfa8vNxGgAxclEV2eUOFqS4BYIexNTkkStwXSw9WP7R2UPj3WHcZlegacyg" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" xintegrity="sha384-hIoBPJpTadxVFVvJscXikwTE/GohIfMbdX5vlIddC9h5S/bSAbLInsC+k1+Lvl/t" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" xintegrity="sha384-43gviWU0YVjaDtb/Gf1ESgOGfs/FvGvmUWFssVfxG/3cYOuWe8M62QxsuYOwSQiZ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https-cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" xintegrity="sha384-wcPF+Hfa8vNxGgAxclEV2eUOFqS4BYIexNTkkStwXSw9WP7R2UPj3WHcZlegacyg" crossorigin="anonymous">
+    <script src="https-cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" xintegrity="sha384-hIoBPJpTadxVFVvJscXikwTE/GohIfMbdX5vlIddC9h5S/bSAbLInsC+k1+Lvl/t" crossorigin="anonymous"></script>
+    <script src="https-cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" xintegrity="sha384-43gviWU0YVjaDtb/Gf1ESgOGfs/FvGvmUWFssVfxG/3cYOuWe8M62QxsuYOwSQiZ" crossorigin="anonymous"></script>
     <!--
       =================================
       END KaTeX
